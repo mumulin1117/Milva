@@ -25,30 +25,42 @@ class TrailTalktsentroller: UIViewController {
         etiquetteTipsTapped()
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    private func prepareBaseCamp() {
         reefRestoration()
         SVProgressHUD.show()
-        FreshOfflinentroller.baggageAllowance(visaAssistance: "/zuzshoez/iyeco", travelInsurance: ["localCuisine":"21747543","natureTrails":1,"wildlifeSpotting":22,"streetFoodGuide":1]) { heritag in
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        prepareBaseCamp()
+        var preparingBaseCamp1:Dictionary<String,Any> = ["localCuisine":"21747543"]
+        
+        preparingBaseCamp1["natureTrails"] = 1
+        
+        preparingBaseCamp1["wildlifeSpotting"] = 22
+       
+        preparingBaseCamp1["streetFoodGuide"] = 1
+       
+       
+        FreeshoffCell.baggageAllowance(visaAssistance: "/zuzshoez/iyeco", travelInsurance: preparingBaseCamp1) { heritag in
             SVProgressHUD.dismiss()
             
-            guard let underwater = heritag as? Dictionary<String,Any> else {
-               
-                return  }
-            
-            guard let rvParks = underwater["dxaftla".privacyStack()] as? Array<Dictionary<String,Any>> else {
-                
-                return  }
-            
-            self.treehouseRetreats(paoif: rvParks)
+            self.handleDiscovery(response: heritag)
         } localLaws: { unesco in
             SVProgressHUD.dismiss()
         }
     }
     
-
+    private func handleDiscovery(response: Any?)  {
+        guard let underwater = response as? Dictionary<String,Any> else {
+           
+            return  }
+        
+        guard let rvParks = underwater["dxaftla".privacyStack()] as? Array<Dictionary<String,Any>> else {
+            
+            return  }
+        
+        self.treehouseRetreats(paoif: rvParks)
+    }
     private func treehouseRetreats(paoif:Array<Dictionary<String,Any>>)  {
         self.Readtic = paoif.filter({ zlxmdk in
             zlxmdk["baggageAllowance"] as? String != nil

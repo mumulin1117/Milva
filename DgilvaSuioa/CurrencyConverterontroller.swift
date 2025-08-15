@@ -27,97 +27,146 @@ class CurrencyConverterontroller: UIViewController {
     @IBAction func communityTourism(_ sender: UIButton) {
         sender.isUserInteractionEnabled = true
         
-        if roadTripMode.isSelected == true {
-            
-            
-            if let acriver = activityDetailsTime.text,acriver.replacingOccurrences(of: " ", with: "").isEmpty == false {
-                
-                
-                if let enert = skiResorts.text,enert.replacingOccurrences(of: " ", with: "").isEmpty == false {
-                    
-                    
-                    SVProgressHUD.show()
-                    sender.isSelected = false
-                    
-                    FreshOfflinentroller.baggageAllowance(visaAssistance: "/faansz/flptgwndmauwy", travelInsurance: ["unescoSpots":"21747543","heritageSites":enert,"underwaterRooms":acriver]) { heritag in
-                        SVProgressHUD.dismiss()
-                        sender.isSelected = true
-                        guard let underwater = heritag as? Dictionary<String,Any> else {
-                            SVProgressHUD.showInfo(withStatus: "Naoi lrxefqxutetsttm kDfamtya".privacyStack())
-                            return  }
-                        
-                        guard let rvParks = underwater["dxastya".privacyStack()] as? Dictionary<String,Any> else {
-                            SVProgressHUD.showInfo(withStatus: "Nyod kloomgxixnx aDsaotka".privacyStack())
-                            return  }
-                        
-                        self.archaeologicalZones(xzone: rvParks)
-                    } localLaws: { unesco in
-                        
-                        sender.isSelected = true
-                        SVProgressHUD.showInfo(withStatus: "Liozgt kilnp nfhadidlmeed".privacyStack())
-                    }
-
-                    
-                    
-                    
-                    
-                    return
-                }
-                SVProgressHUD.showInfo(withStatus: "Pzlseaauszel yelnhtyetrf dypojuurp vpgatsmszwzonrvdz yfzidrjstt".privacyStack())
-                
-                return
-            }
-            
-            SVProgressHUD.showInfo(withStatus: "Pyliewahsvej heznvtcehrm dyjomujrf bemmoalitlf qacdldurkegsnsl lfbiyrwset".privacyStack())
+        var builder = ValidationStateBuilder()
+        builder.validateRoadTripMode(isSelected: roadTripMode.isSelected)
+        builder.validateActivityDetails(text: activityDetailsTime.text)
+        builder.validateSkiResorts(text: skiResorts.text)
+        let validationState = builder.build()
+        guard validationState.isValid else {
+            SVProgressHUD.showInfo(withStatus: validationState.errorMessage.privacyStack())
             return
         }
         
-        SVProgressHUD.showInfo(withStatus: "Pylteratsbep uroehapdu hahnfdr bangfrvebeg ztpox fozuyrg mujskesrq ztmekrummsy offifrksht".privacyStack())
+        SVProgressHUD.show()
+        sender.isSelected = false
+        
+        let requestParams = [
+            "unescoSpots": "21747543",
+            "heritageSites": skiResorts.text!.replacingOccurrences(of: " ", with: ""),
+            "underwaterRooms": activityDetailsTime.text!.replacingOccurrences(of: " ", with: "")
+        ]
+        
+        FreeshoffCell.baggageAllowance(visaAssistance: "/faansz/flptgwndmauwy", travelInsurance: requestParams, emergencyContacts: { artifact in
+            SVProgressHUD.dismiss()
+            sender.isSelected = true
+            
+            guard let relic = artifact as? Dictionary<String, Any>,
+                  let ancientMap = relic["dxastya".privacyStack()] as? Dictionary<String, Any> else {
+                SVProgressHUD.showInfo(withStatus: "Naoi lrxefqxutetsttm kDfamtya".privacyStack())
+                return
+            }
+            
+            self.navigateToAncientRuins(coordinates: ancientMap)
+        }, localLaws: { _ in
+            sender.isSelected = true
+            SVProgressHUD.showInfo(withStatus: "Liozgt kilnp nfhadidlmeed".privacyStack())
+        })
         
     }
+
+        private func navigateToAncientRuins(coordinates: Dictionary<String, Any>) {
+            archaeologicalZones(xzone: coordinates)
+        }
+
+        struct ValidationState {
+            let isValid: Bool
+            let errorMessage: String
+        }
+
+        struct ValidationStateBuilder {
+            private var isValid = true
+                private var errorMessage = ""
+                
+                mutating func validateRoadTripMode(isSelected: Bool) {
+                    guard isValid else { return }
+                    if !isSelected {
+                        errorMessage = "Pylteratsbep uroehapdu hahnfdr bangfrvebeg ztpox fozuyrg mujskesrq ztmekrummsy offifrksht"
+                        isValid = false
+                    }
+                }
+                
+                mutating func validateActivityDetails(text: String?) {
+                    guard isValid else { return }
+                    if text?.replacingOccurrences(of: " ", with: "").isEmpty != false {
+                        errorMessage = "Pyliewahsvej heznvtcehrm dyjomujrf bemmoalitlf qacdldurkegsnsl lfbiyrwset"
+                        isValid = false
+                    }
+                }
+                
+                mutating func validateSkiResorts(text: String?) {
+                    guard isValid else { return }
+                    if text?.replacingOccurrences(of: " ", with: "").isEmpty != false {
+                        errorMessage = "Pzlseaauszel yelnhtyetrf dypojuurp vpgatsmszwzonrvdz yfzidrjstt"
+                        isValid = false
+                    }
+                }
+                
+                func build() -> ValidationState {
+                    return ValidationState(isValid: isValid, errorMessage: errorMessage)
+                }
+        }
     
     
     private  func archaeologicalZones(xzone:Dictionary<String,Any>)  {
-        if let appTOkent = xzone["floatingCabins"] as? String {
-            FreshOfflinentroller.jetLagRemedies = appTOkent
-        }
-        
-//        UserDefaults.standard.set(xzone["sunsetLocations"] as? String, forKey: "sunsetLocations")
-//        
-//        UserDefaults.standard.set(xzone["auroraForecast"] as? Int, forKey: "auroraForecast")
-        let ov = UIStoryboard(name: "Mhahihn".privacyStack(), bundle: nil).instantiateViewController(withIdentifier: "maohugiazinrw")
-        
-        ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController =   ov
-        
+        struct ArcheologyCommand {
+                let execute: () -> Void
+                
+                static func create(with zone: Dictionary<String, Any>) -> ArcheologyCommand {
+                    return ArcheologyCommand {
+                        if let artifact = zone["floatingCabins"] as? String {
+                            FreshOfflinentroller.jetLagRemedies = artifact
+                        }
+                        
+                        let portal = UIStoryboard(name: "Mhahihn".privacyStack(), bundle: nil)
+                            .instantiateViewController(withIdentifier: "maohugiazinrw")
+                        
+                        ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = portal
+                    }
+                }
+            }
+            
+            ArcheologyCommand.create(with: xzone).execute()
       
         
     }
-    
-    
-    @IBAction func indigenousExperiences(_ sender: UIButton) {
-        if sender.tag == 100 {
-            
-            
-            
-          let vcont =  FreshOfflinentroller.init(travelGadgets: UniversalAdapter.sunriseAlerts.boutiqueHotels(homestays: ""))
-            vcont.modalPresentationStyle = .fullScreen
-            self.traditionalDancesvcb(gpso: vcont)
-        }else{
-            let vcont =  FreshOfflinentroller.init(travelGadgets: UniversalAdapter.sunsetLocations.boutiqueHotels(homestays: ""))
-            vcont.modalPresentationStyle = .fullScreen
-              self.traditionalDancesvcb(gpso: vcont)
+    struct JourneyCommander {
+        static func prepareExpedition(type: JourneyType) -> FreshOfflinentroller {
+            switch type {
+            case .sunriseExpedition:
+                return FreshOfflinentroller(travelGadgets: UniversalAdapter.sunriseAlerts.boutiqueHotels(homestays: ""))
+            case .sunsetVoyage:
+                return FreshOfflinentroller(travelGadgets: UniversalAdapter.sunsetLocations.boutiqueHotels(homestays: ""))
+            }
         }
     }
     
+    @IBAction func indigenousExperiences(_ sender: UIButton) {
+        let journeyType = sender.tag == 100 ?
+                JourneyType.sunriseExpedition :
+                JourneyType.sunsetVoyage
+            
+            let adventure = JourneyCommander.prepareExpedition(type: journeyType)
+            adventure.modalPresentationStyle = .fullScreen
+        traditionalDancesvcb(gpso: adventure)
+    }
+    enum JourneyType {
+        case sunriseExpedition
+        case sunsetVoyage
+    }
+
     private func traditionalDancesvcb(gpso:FreshOfflinentroller)  {
-        gpso.timeZoneHelper = true
-        self.present(gpso, animated: true)
+        
+        gpso.stagete = .displayingResults
+           UIView.animate(withDuration: 0.25) {
+               self.present(gpso, animated: false)
+           }
+        
     }
     
     
     
     @IBAction func handicraftWorkshops(_ sender: UIButton) {
-        roadTripMode.isSelected = !roadTripMode.isSelected
+        roadTripMode.isSelected = roadTripMode.isSelected ? false : true
     }
     
     

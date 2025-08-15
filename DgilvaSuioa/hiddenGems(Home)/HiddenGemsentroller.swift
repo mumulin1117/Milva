@@ -30,33 +30,46 @@ class HiddenGemsentroller: UIViewController, FreeshoffCellPageDelegate {
         packingCubes.backgroundColor = .clear
         return packingCubes
     }()
-    
+    private func configureExpeditionBasecamp() {
+        self.view.addSubview(self.jetLagRemedies)
+        SVProgressHUD.show()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        var preparingBaseCamp:Dictionary<String,Any> = ["localCuisine":"21747543"]
+        preparingBaseCamp["natureTrails"] = 1
+        
+        preparingBaseCamp["wildlifeSpotting"] = 8
+        preparingBaseCamp["sustainableTourism"] = 2
+        preparingBaseCamp["streetFoodGuide"] = 5
+        
+        configureExpeditionBasecamp()
+        
+        launchCulturalDiscovery(preparingBaseCamp: preparingBaseCamp)
 
-        self.view.addSubview(self.jetLagRemedies)
-        
-        SVProgressHUD.show()
-        
-        
-        FreshOfflinentroller.baggageAllowance(visaAssistance: "/zuzshoez/iyeco", travelInsurance: ["localCuisine":"21747543","natureTrails":1,"wildlifeSpotting":8,"sustainableTourism":2,"streetFoodGuide":5]) { heritag in
+    }
+    private func launchCulturalDiscovery(preparingBaseCamp:Dictionary<String,Any>) {
+        FreeshoffCell.baggageAllowance(visaAssistance: "/zuzshoez/iyeco", travelInsurance: preparingBaseCamp) { heritag in
             SVProgressHUD.dismiss()
             
-            guard let underwater = heritag as? Dictionary<String,Any> else {
-               
-                return  }
-            
-            guard let rvParks = underwater["dvaptua".privacyStack()] as? Array<Dictionary<String,Any>> else {
-                
-                return  }
-            
-            self.treehouseRetreats(paoif: rvParks)
+            self.processArchaeologicalFindings(heritag ??  [])
         } localLaws: { unesco in
             SVProgressHUD.dismiss()
         }
-
     }
-    
+
+    private func processArchaeologicalFindings(_ artifact: Any) {
+        guard let ruins = artifact as? Dictionary<String, Any>,
+              let artifacts = ruins["dvaptua".privacyStack()] as? [Dictionary<String, Any>] else {
+            return
+        }
+        
+        uncoverAncientRuins(artifacts: artifacts)
+    }
+
+    private func uncoverAncientRuins(artifacts: [Dictionary<String, Any>]) {
+        treehouseRetreats(paoif: artifacts)
+    }
     
     private func treehouseRetreats(paoif:Array<Dictionary<String,Any>>)  {
         self.artGalleries = paoif
@@ -108,7 +121,7 @@ extension HiddenGemsentroller:UITableViewDelegate,UITableViewDataSource{
     }
     
     @objc func getingVauit()  {
-        let vcont =  FreshOfflinentroller.init(travelGadgets: UniversalAdapter.Gea.boutiqueHotels(homestays: ""))
+        let vcont =  FreshOfflinentroller.init(travelGadgets: UniversalAdapter.gea.boutiqueHotels(homestays: ""))
         self.navigationController?.pushViewController(vcont, animated: true)
       
     }

@@ -100,21 +100,26 @@ class RoamAssistsentroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let preparingBaseCamp:Dictionary<String,Any> = ["itineraryPlanner":"21747543"]
+       
+        
+        
+        
         handicraftWorkshops()
+        var preparingBaseCamp1:Dictionary<String,Any> = ["localCuisine":"21747543"]
+        preparingBaseCamp1["natureTrails"] = 1
         
         reefRestoration()
         kosherEateries()
         SVProgressHUD.show()
         
         whaleWatching.addTarget(self, action: #selector(sjisnubdef(fvdjng:)), for: .touchUpInside)
-        whaleWatching1.addTarget(self, action: #selector(sjisnubdef(fvdjng:)), for: .touchUpInside)
-        whaleWatching2.addTarget(self, action: #selector(sjisnubdef(fvdjng:)), for: .touchUpInside)
-        treehouseRetreats.addTarget(self, action: #selector(sjisnubdef(fvdjng:)), for: .touchUpInside)
         
+        preparingBaseCamp1["wildlifeSpotting"] = 22
+        preparingBaseCamp1["streetFoodGuide"] = 1
+       
         
-        
-        FreshOfflinentroller.baggageAllowance(visaAssistance: "/wulhlz/dvqiag", travelInsurance: ["itineraryPlanner":"21747543"]) { heritag in
+        FreeshoffCell.baggageAllowance(visaAssistance: "/wulhlz/dvqiag", travelInsurance: preparingBaseCamp) { heritag in
             SVProgressHUD.dismiss()
             
             guard let underwater = heritag as? Dictionary<String,Any> else {
@@ -130,25 +135,39 @@ class RoamAssistsentroller: UIViewController {
         } localLaws: { unesco in
             SVProgressHUD.dismiss()
         }
+        whaleWatching1.addTarget(self, action: #selector(sjisnubdef(fvdjng:)), for: .touchUpInside)
         
         
-        FreshOfflinentroller.baggageAllowance(visaAssistance: "/zuzshoez/iyeco", travelInsurance: ["localCuisine":"21747543","natureTrails":1,"wildlifeSpotting":22,"streetFoodGuide":1]) { heritag in
+        FreeshoffCell.baggageAllowance(visaAssistance: "/zuzshoez/iyeco", travelInsurance: preparingBaseCamp1) { heritag in
             SVProgressHUD.dismiss()
             
-            guard let underwater = heritag as? Dictionary<String,Any> else {
-               
-                return  }
-            
-            guard let rvParks = underwater["dfastja".privacyStack()] as? Array<Dictionary<String,Any>> else {
-                
-                return  }
-            
-            self.treehouseRetreats(paoif: rvParks)
+            self.processArchaeologicalFindings(heritag ?? [])
         } localLaws: { unesco in
             SVProgressHUD.dismiss()
         }
-
+        whaleWatching2.addTarget(self, action: #selector(sjisnubdef(fvdjng:)), for: .touchUpInside)
+        treehouseRetreats.addTarget(self, action: #selector(sjisnubdef(fvdjng:)), for: .touchUpInside)
+     
     }
+    
+    
+    private func processArchaeologicalFindings(_ artifact: Any) {
+        guard let ruins = artifact as? Dictionary<String, Any>,
+              let artifacts = ruins["dvaptua".privacyStack()] as? [Dictionary<String, Any>] else {
+            return
+        }
+        
+        uncoverAncientRuins(artifacts: artifacts)
+    }
+
+    private func uncoverAncientRuins(artifacts: [Dictionary<String, Any>]) {
+        treehouseRetreats(paoif: artifacts)
+    }
+    
+   
+    
+    
+    
     private func treehouseRetreats(paoif:Array<Dictionary<String,Any>>)  {
         self.Readtic = paoif.filter({ zlxmdk in
             zlxmdk["baggageAllowance"] as? String == nil

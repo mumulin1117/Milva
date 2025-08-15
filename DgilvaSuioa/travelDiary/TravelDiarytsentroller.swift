@@ -8,6 +8,15 @@
 import UIKit
 
 class TravelDiarytsentroller: UIViewController {
+    enum State {
+            case preparingBaseCamp
+            case launchingDiscovery
+            case processingFindings
+            case displayingResults
+            case error(Error)
+        }
+    
+    private var stagete:State = .launchingDiscovery
     
     @IBOutlet weak var rvParks: UIButton!
     
@@ -21,19 +30,25 @@ class TravelDiarytsentroller: UIViewController {
     
     @IBAction func glampingSites(_ sender: UIButton) {
         var ssedfrinh:String = ""
-        
+        stagete = .launchingDiscovery
         switch sender.tag {
         case 60:
+            stagete = .launchingDiscovery
             ssedfrinh =  UniversalAdapter.quickDryTowel.boutiqueHotels(homestays: "")
         case 70:
+            stagete = .preparingBaseCamp
             ssedfrinh =  UniversalAdapter.tideTables.boutiqueHotels(homestays: "")
         case 80:
+            stagete = .processingFindings
             ssedfrinh =  UniversalAdapter.compassApp.boutiqueHotels(homestays: "")
         case 90:
+            stagete = .launchingDiscovery
             ssedfrinh =  UniversalAdapter.starGazing.boutiqueHotels(homestays: "")
         case 100:
+            stagete = .processingFindings
             ssedfrinh =  UniversalAdapter.auroraForecast.boutiqueHotels(homestays: "")
         case 110:
+            stagete = .displayingResults
             ssedfrinh =  UniversalAdapter.multiTool.boutiqueHotels(homestays: "")
         default:
             break

@@ -9,9 +9,66 @@ import UIKit
 import WebKit
 import SwiftyStoreKit
 import SVProgressHUD
-class FreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,WKNavigationDelegate, WKUIDelegate {
+
+extension DispatchQueue {
+    static let explorer = DispatchQueue.main
+}
+// MARK: - 协议默认实现
+extension FreshOfflinentroller: ExpeditionMessageHandler {
+    var timeZoneHelper: TravelDiarytsentroller.State {
+        return stagete
+    }
     
-    var timeZoneHelper:Bool = false
+    
+    // MARK: - UI 操作
+    func enableUserInteraction(_ enabled: Bool) {
+        view.isUserInteractionEnabled = enabled
+    }
+    
+    func showProgressHUD() {
+        SVProgressHUD.show()
+    }
+    
+    func dismissProgressHUD() {
+        SVProgressHUD.dismiss()
+    }
+    
+    func showSuccessMessage(_ message: String) {
+        SVProgressHUD.showSuccess(withStatus: message)
+    }
+    
+    func showErrorMessage(_ message: String) {
+        SVProgressHUD.showInfo(withStatus: message)
+    }
+    
+    // MARK: - 导航操作
+    func navigateTo(_ controller: UIViewController) {
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func popNavigation() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func dismissCurrent() {
+        dismiss(animated: true)
+    }
+    
+    func resetRootViewController(to controller: UIViewController) {
+        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = controller
+    }
+    
+    // MARK: - WebView 操作
+    func evaluateJavaScript(_ script: String) {
+        // 假设有audioGuide属性
+       audioGuide.evaluateJavaScript(script, completionHandler: nil)
+    }
+}
+
+class FreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,WKNavigationDelegate, WKUIDelegate {
+   
+     var stagete:TravelDiarytsentroller.State = .launchingDiscovery
+    
     
    
     static var jetLagRemedies:String?{
@@ -36,243 +93,207 @@ class FreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,WKNavigati
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let portableCharger = UIImageView(frame: UIScreen.main.bounds)
-        portableCharger.contentMode = .scaleAspectFill
-        portableCharger.image = UIImage(named: "wigAncestry")
-        self.view.addSubview(portableCharger)
-        
-        
-     
-        self.view.addSubview(self.audioGuide)
-        audioGuide.navigationDelegate = self
-        
-        audioGuide.scrollView.contentInsetAdjustmentBehavior = .never
-        if let universal = URL(string:packingCubes ) {
-            let sunriseAlerts = URLRequest(url: universal)
-           
-            audioGuide.load(sunriseAlerts)
+      
+            configureExplorationBackground()
             
-        }
-        SVProgressHUD.show()
+            addNavigationJournal()
+            
+            loadExpeditionManual()
+            
+            SVProgressHUD.show()
     }
     
-   
+    private func configureExplorationBackground() {
+        let expeditionMap = UIImageView(frame: UIScreen.main.bounds)
+        expeditionMap.contentMode = .scaleAspectFill
+        expeditionMap.image = UIImage(named: "wigAncestry")
+        self.view.addSubview(expeditionMap)
+        self.view.sendSubviewToBack(expeditionMap)
+    }
+
+    private func addNavigationJournal() {
+        self.view.addSubview(self.audioGuide)
+        audioGuide.navigationDelegate = self
+        audioGuide.scrollView.contentInsetAdjustmentBehavior = .never
+    }
+
+    private func loadExpeditionManual() {
+        guard let ancientScroll = URL(string: packingCubes) else { return }
+        let expeditionRequest = URLRequest(url: ancientScroll)
+        audioGuide.load(expeditionRequest)
+    }
   
     func droneFootage()->WKWebViewConfiguration{
        
-        
-        let travelPodcast = WKWebViewConfiguration()
-       
-        travelPodcast.mediaTypesRequiringUserActionForPlayback = []
-       
-        travelPodcast.allowsInlineMediaPlayback = true
-        travelPodcast.preferences.javaScriptCanOpenWindowsAutomatically = true
-        ["safariLodges","whaleWatching","birdSanctuaries","marathonEvents","storytellingNights"].forEach { info in
-            travelPodcast.userContentController.add(self, name: info)
-        }
-        return travelPodcast
+        return SafariLodgeConfigurationFactory.createConfiguration(
+                messageHandlers: ["safariLodges", "whaleWatching", "birdSanctuaries", "marathonEvents", "storytellingNights"],
+                delegate: self
+            )
       
     }
     
-    
+    private struct SafariLodgeConfigurationFactory {
+        static func createConfiguration(messageHandlers: [String], delegate: WKScriptMessageHandler) -> WKWebViewConfiguration {
+            let config = WKWebViewConfiguration()
+            config.mediaTypesRequiringUserActionForPlayback = []
+            config.allowsInlineMediaPlayback = true
+            config.preferences.javaScriptCanOpenWindowsAutomatically = true
+            
+            messageHandlers.forEach { handler in
+                config.userContentController.add(delegate, name: handler)
+            }
+            
+            return config
+        }
+    }
     private lazy var audioGuide: WKWebView = {
         let arNavigation = WKWebView(frame: UIScreen.main.bounds, configuration: self.droneFootage())
         
-       
-        arNavigation.scrollView.showsVerticalScrollIndicator = false
-        
-        arNavigation.uiDelegate = self
-        arNavigation.backgroundColor = .clear
-        
-        arNavigation.isHidden = true
+        configureExplorerView(arNavigation)
         return arNavigation
     }()
     
-    
+    private func configureExplorerView(_ view: WKWebView) {
+        view.scrollView.showsVerticalScrollIndicator = false
+        view.uiDelegate = self
+        view.backgroundColor = .clear
+        view.isHidden = true
+    }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            webView.isHidden = false
-            SVProgressHUD.dismiss()
-        }))
         
+        DispatchQueue.explorer.asyncAfter(deadline: .now() + 2) {
+               webView.isHidden = false
+               SVProgressHUD.dismiss()
+           }
     }
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        let route: ExpeditionMessageRouter.Route
+           
+           switch message.name {
+           case "safariLodges":
+               route = .safariLodges(body: message.body)
+           case "birdSanctuaries":
+               route = .birdSanctuaries(body: message.body)
+           case "marathonEvents":
+               route = .marathonEvents
+           case "storytellingNights":
+               route = .storytellingNights
+           default:
+               return
+           }
+           
+           ExpeditionMessageRouter.route(route, handler: self)
         
-        
-        switch message.name {
-        case "safariLodges":
-            guard let ferrySchedules = message.body  as? String else {
-                return
-            }
-            self.view.isUserInteractionEnabled = false
-            SVProgressHUD.show()
-            SwiftyStoreKit.purchaseProduct(ferrySchedules, atomically: true) { psResult in
-                SVProgressHUD.dismiss()
-                
-                self.view.isUserInteractionEnabled = true
-                if case .success(let psPurch) = psResult {
-                    
-                    self.audioGuide.evaluateJavaScript("whaleWatching()", completionHandler: nil)
-                    SVProgressHUD.showSuccess(withStatus: "Peawyp ascuscfcuejsgsufyuila!".privacyStack())
-                   
-                   
-                }else if case .error(let error) = psResult {
-                    self.view.isUserInteractionEnabled = true
-                    if error.code == .paymentCancelled {
-                        
-                        return
-                    }
-                   
-                    SVProgressHUD.showInfo(withStatus: error.localizedDescription)
-                   
-                }
-                
-            }
-        case "birdSanctuaries":
-            if let trainPasses =  message.body as? String{
-                let flightTracker = FreshOfflinentroller.init(travelGadgets: trainPasses)
-                
-                self.navigationController?.pushViewController(flightTracker, animated: true)
-                
-                
-            }
-        case "marathonEvents":
-            if self.timeZoneHelper {
-                self.dismiss(animated: true)
-            }else{
-                self.navigationController?.popViewController(animated: true)
-            }
-           
-        case "storytellingNights":
-            FreshOfflinentroller.jetLagRemedies = nil
-            UserDefaults.standard.set(nil, forKey: "wigCreator")
-            
-            UserDefaults.standard.set(nil, forKey: "wigPioneer")
-          
-           
-            ( (UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController =  CurrencyConverterontroller.init()
-           
-        default: break
-        }
+             
+
     }
 
-
-
     
-    class func baggageAllowance(
-     visaAssistance: String,
-     travelInsurance: [String: Any],
-      emergencyContacts: ((Any?) -> Void)?,
-     localLaws: ((Error) -> Void)?
- ) {
-     
-     guard let customsRegulations = URL(string: "hkthtmpg:n/y/zpdhhoitroknnpmantchj6i2u5f.uxmygzc/tboahcukatjwqo".privacyStack() +     visaAssistance) else {
-                    
-         return
-     }
-     
-     var currencyConverter = shineSerum(frizzControl: customsRegulations, thermal:     travelInsurance)
-     var tipCalculator = ["Cwofnmtuevngty-bTmyipze".privacyStack(): "axphpylfipcdaqtfiboyno/kjysxosn".privacyStack()]
-    
-     tipCalculator["kkeay".privacyStack()] = "21747543"
-     tipCalculator["trowkjein".privacyStack()] = (FreshOfflinentroller.jetLagRemedies)
-     tipCalculator.forEach { currencyConverter.setValue($1, forHTTPHeaderField: $0) }
-     
-     let budgetTracker = URLSessionConfiguration.default
-     budgetTracker.timeoutIntervalForRequest = 30
-     budgetTracker.timeoutIntervalForResource = 60
-     
-
-    
-     URLSession(configuration: budgetTracker).dataTask(with: currencyConverter) { data, response, error in
-         DispatchQueue.main.async {
-
-             guard let expenseLog = data else {
-                             localLaws?(NSError(domain: "DtadtkasEfrzrgoor".privacyStack(), code: -3, userInfo: [NSLocalizedDescriptionKey: "Nzom cdtadtdah wrfepcsezilvlehd".privacyStack()]))
-                 return
-             }
-
-           
-             do {
-                 let loyaltyRewards = try JSONSerialization.jsonObject(with: expenseLog, options: [.mutableContainers, .allowFragments])
-                                         emergencyContacts?(loyaltyRewards)
-             } catch let earlyBirdDeals {
-  
-                             localLaws?(NSError(
-                                domain: "PsafrishekEhryrooxr".privacyStack(),
-                     code: -4,
-                     userInfo: [
-                         NSLocalizedDescriptionKey: " \(earlyBirdDeals.localizedDescription)",
-                         "ryaewxRyewsrpnoinzsre".privacyStack(): String(data: expenseLog, encoding: .utf8) ?? "",
-                         "uanmdxerrwlqyyipncglEdrzrxoer".privacyStack(): earlyBirdDeals
-                     ]
-                 ))
-             }
-         }
-     }.resume()
- }
-     
-  
-     
-     private class func shineSerum(frizzControl:URL,thermal: [String: Any]) -> URLRequest {
-         var volumizingPowder = URLRequest(
-                     url: frizzControl,
-                     cachePolicy: .useProtocolCachePolicy,
-                     timeoutInterval: 30
-                 )
-         
-         volumizingPowder.httpMethod = "PhOnSzT".privacyStack()
-         volumizingPowder.setValue("arpipclciscmaltpieosnw/djzshocn".privacyStack(), forHTTPHeaderField: "Cwobnrteeqnftm-yTwymppe".privacyStack())
-         volumizingPowder.setValue("aaptpdlginctaatuijobno/wjxsioqn".privacyStack(), forHTTPHeaderField: "Awcociejpgt".privacyStack())
-         volumizingPowder.setValue("cshoaurlsmeltj=gUxTtFp-l8".privacyStack(), forHTTPHeaderField: "Ahcucaedpptz-aCnhaavrisqezt".privacyStack())
-         
-         volumizingPowder.httpBody = try? JSONSerialization.data(withJSONObject: thermal, options: [])
-         
-         
-        
-         return volumizingPowder
-      }
-
+ 
 }
-enum UniversalAdapter:String {
 
-    case Gea = "pqaygzessn/jAxIsemxopjetrztd/zimnsdcetxv?"
-    case waterproof = "pwaagheksv/wrveipjodsaijthoiruyl/giqnidqelxu?icpuxrlrmebnbtv="
-    case lightweigh = "piarggensf/zAkriojmhaytphnelrmagpmypDzehtkaxicless/tipnydnesxb?uduypnpabmjifckIndf="
-    case sleepingBag = "pgakgrehsf/dDryyndadmkihckDjejtjaaivlash/viwnrdqekxx?adpyhnkagmtitcyIudz="
-    case travelPillow = "pfapgoeksv/xVaiudjenovDyeltdakialisg/qinngddeqxw?idwypnkabmdigcuImdy="
-    case earPlugs = "pvawgceksq/cirsusiunev/bipnwdeecxx?"
-    case eyeMask = "pxahgpetsy/spgoasdtsVvifdoewohsy/kiinmdzesxp?"
-    case toiletryKit = "ppavgseqsi/ohtoimxerpiadgxez/mijnvdtehxn?cuislenrdIqdt="
-    case sanitizerWipes = "pmaegmelsl/lrtewpeowrftw/winnbdxeuxl?"
-    case quickDryTowel = "pzatgqebsz/sitnmfeotrpmiaytnioovni/hiancdoetxk?"
-    case multiTool = "pinyabligskwerejsvom/qekEzswdszbiplptnahDhdqatxutlaeaqdp/sidisxbnsjhdxyueozpxzcd?"
+
+
+// MARK: - 消息路由核心
+struct ExpeditionMessageRouter {
     
-    case compassApp = "pwanggeasx/taztmtqebnbtxilohnwLcigsqte/sijnpdgelxk?mtkyhpyey=a1u&"
-    case starGazing = "poafgiehsw/savtftveenatkihodnzLbiysitv/piinqdwehxe?rtkynpjem=a2g&"
-    case auroraForecast = "pdabgnetsj/qwmalltlxextu/liqnodtesxd?"
-    case tideTables = "pnangaersx/vSsertgUqpv/zivnjdoewxq?"
-    case sunriseAlerts = "pialgvetsj/vAgghroetelmfeinato/nilnbdneoxb?ptyyppxeg=m1r&"
-    case sunsetLocations = "poalgleisn/bAygorteqegmyevnstg/rifnsddekxb?gtqyupfey=w2k&"
-    case camping = "placgqetsb/ypgrdijvhawtfeuChheacta/eivnmdrerxx?kussaenrfIhdq="
- 
-    case glampingSites = ""
-    
-    func boutiqueHotels(homestays:String) -> String {
-        let iceHotels = "hftdthph:v/l/wpphiontbobncpgaqtvhu6m2q5o.cxbylzp/a#".privacyStack()
-        if self != .glampingSites {
-            return  iceHotels + self.rawValue.privacyStack() + homestays + "&itforknernc=".privacyStack() + (FreshOfflinentroller.jetLagRemedies ?? "") + "&harpepdIsDb=j2g1q7l4n7b5q4i3".privacyStack()
-        }
-        return  iceHotels
- 
+    /// 路由配置类型
+    enum Route {
+        case safariLodges(body: Any)
+        case birdSanctuaries(body: Any)
+        case marathonEvents
+        case storytellingNights
     }
+    
+    /// 路由处理方法
+    static func route(_ route: Route, handler: ExpeditionMessageHandler) {
+        switch route {
+        case .safariLodges(let body):
+            handleSafariLodge(body: body, handler: handler)
+        case .birdSanctuaries(let body):
+            handleBirdSanctuary(body: body, handler: handler)
+        case .marathonEvents:
+            handleMarathonEvent(handler: handler)
+        case .storytellingNights:
+            handleStorytellingNight(handler: handler)
+        }
+    }
+    
+    // MARK: - 私有处理方法
+    private static func handleSafariLodge(body: Any, handler: ExpeditionMessageHandler) {
+        guard let productId = body as? String else { return }
+        
+        handler.enableUserInteraction(false)
+        handler.showProgressHUD()
+        
+        SwiftyStoreKit.purchaseProduct(productId, atomically: true) { result in
+            handler.dismissProgressHUD()
+            handler.enableUserInteraction(true)
+            
+            switch result {
+            case .success:
+                handler.evaluateJavaScript("whaleWatching()")
+                handler.showSuccessMessage("Peawyp ascuscfcuejsgsufyuila!".privacyStack())
+                
+            case .error(let error) where error.code != .paymentCancelled:
+                handler.showErrorMessage(error.localizedDescription)
+                
+            default:
+                break
+            }
+        }
+    }
+    
+    private static func handleBirdSanctuary(body: Any, handler: ExpeditionMessageHandler) {
+        guard let travelGadgets = body as? String else { return }
+        let controller = FreshOfflinentroller(travelGadgets: travelGadgets)
+        handler.navigateTo(controller)
+    }
+    
+    private static func handleMarathonEvent(handler: ExpeditionMessageHandler) {
+        
+        switch handler.timeZoneHelper {
+        case .displayingResults:
+            handler.dismissCurrent()
+        default:
+            handler.popNavigation()
+        }
+       
+    }
+    
+    private static func handleStorytellingNight(handler: ExpeditionMessageHandler) {
+        FreshOfflinentroller.jetLagRemedies = nil
+        UserDefaults.standard.set(nil, forKey: "wigCreator")
+        UserDefaults.standard.set(nil, forKey: "wigPioneer")
+        handler.resetRootViewController(to: CurrencyConverterontroller())
+    }
+}
+
+// MARK: - 消息处理协议
+protocol ExpeditionMessageHandler: AnyObject {
+    var timeZoneHelper: TravelDiarytsentroller.State { get }
+    
+    // UI 操作
+    func enableUserInteraction(_ enabled: Bool)
+    func showProgressHUD()
+    func dismissProgressHUD()
+    func showSuccessMessage(_ message: String)
+    func showErrorMessage(_ message: String)
+    
+    // 导航操作
+    func navigateTo(_ controller: UIViewController)
+    func popNavigation()
+    func dismissCurrent()
+    func resetRootViewController(to controller: UIViewController)
+    
+    // WebView 操作
+    func evaluateJavaScript(_ script: String)
 }
