@@ -121,7 +121,7 @@ class RoamAssistsentroller: UIViewController {
                
                 return  }
             
-            guard let rvParks = underwater["data"] as? Array<Dictionary<String,Any>> else {
+            guard let rvParks = underwater["dfastja".privacyStack()] as? Array<Dictionary<String,Any>> else {
                 
                 return  }
             
@@ -139,7 +139,7 @@ class RoamAssistsentroller: UIViewController {
                
                 return  }
             
-            guard let rvParks = underwater["data"] as? Array<Dictionary<String,Any>> else {
+            guard let rvParks = underwater["dfastja".privacyStack()] as? Array<Dictionary<String,Any>> else {
                 
                 return  }
             

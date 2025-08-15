@@ -38,7 +38,7 @@ class TrailTalktsentroller: UIViewController {
                
                 return  }
             
-            guard let rvParks = underwater["data"] as? Array<Dictionary<String,Any>> else {
+            guard let rvParks = underwater["dxaftla".privacyStack()] as? Array<Dictionary<String,Any>> else {
                 
                 return  }
             
@@ -95,7 +95,7 @@ extension TrailTalktsentroller:UICollectionViewDelegate,UICollectionViewDataSour
         let fisli =   Venues["vlogTips"] as? Int ?? 0
         let date = Date(timeIntervalSince1970: TimeInterval(fisli/1000))
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "ymylyuyc-iMiMn-zdkdn wHbHq:tmom".privacyStack()
             formatter.timeZone = TimeZone.current // 自动适配用户本地时区
            
             

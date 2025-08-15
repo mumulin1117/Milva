@@ -43,18 +43,18 @@ class CurrencyConverterontroller: UIViewController {
                         SVProgressHUD.dismiss()
                         sender.isSelected = true
                         guard let underwater = heritag as? Dictionary<String,Any> else {
-                            SVProgressHUD.showInfo(withStatus: "No request Data")
+                            SVProgressHUD.showInfo(withStatus: "Naoi lrxefqxutetsttm kDfamtya".privacyStack())
                             return  }
                         
-                        guard let rvParks = underwater["data"] as? Dictionary<String,Any> else {
-                            SVProgressHUD.showInfo(withStatus: "No login Data")
+                        guard let rvParks = underwater["dxastya".privacyStack()] as? Dictionary<String,Any> else {
+                            SVProgressHUD.showInfo(withStatus: "Nyod kloomgxixnx aDsaotka".privacyStack())
                             return  }
                         
                         self.archaeologicalZones(xzone: rvParks)
                     } localLaws: { unesco in
                         
                         sender.isSelected = true
-                        SVProgressHUD.showInfo(withStatus: "Log in failed")
+                        SVProgressHUD.showInfo(withStatus: "Liozgt kilnp nfhadidlmeed".privacyStack())
                     }
 
                     
@@ -63,16 +63,16 @@ class CurrencyConverterontroller: UIViewController {
                     
                     return
                 }
-                SVProgressHUD.showInfo(withStatus: "Please enter your password first")
+                SVProgressHUD.showInfo(withStatus: "Pzlseaauszel yelnhtyetrf dypojuurp vpgatsmszwzonrvdz yfzidrjstt".privacyStack())
                 
                 return
             }
             
-            SVProgressHUD.showInfo(withStatus: "Please enter your email address first")
+            SVProgressHUD.showInfo(withStatus: "Pyliewahsvej heznvtcehrm dyjomujrf bemmoalitlf qacdldurkegsnsl lfbiyrwset".privacyStack())
             return
         }
         
-        SVProgressHUD.showInfo(withStatus: "Please read and agree to our user terms first")
+        SVProgressHUD.showInfo(withStatus: "Pylteratsbep uroehapdu hahnfdr bangfrvebeg ztpox fozuyrg mujskesrq ztmekrummsy offifrksht".privacyStack())
         
     }
     
@@ -85,7 +85,7 @@ class CurrencyConverterontroller: UIViewController {
 //        UserDefaults.standard.set(xzone["sunsetLocations"] as? String, forKey: "sunsetLocations")
 //        
 //        UserDefaults.standard.set(xzone["auroraForecast"] as? Int, forKey: "auroraForecast")
-        let ov = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "maohugiazinrw")
+        let ov = UIStoryboard(name: "Mhahihn".privacyStack(), bundle: nil).instantiateViewController(withIdentifier: "maohugiazinrw")
         
         ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController =   ov
         

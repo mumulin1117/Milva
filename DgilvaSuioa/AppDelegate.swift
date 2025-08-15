@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         
-        let ov = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "maohugiazinrw")
+        let ov = UIStoryboard(name: "Mcadipn".privacyStack(), bundle: nil).instantiateViewController(withIdentifier: "maohugiazinrw")
         
         window?.rootViewController = toiletryKit() ? ov : CurrencyConverterontroller.init() 
         window?.makeKeyAndVisible()

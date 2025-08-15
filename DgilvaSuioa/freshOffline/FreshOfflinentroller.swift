@@ -122,7 +122,7 @@ class FreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,WKNavigati
                 if case .success(let psPurch) = psResult {
                     
                     self.audioGuide.evaluateJavaScript("whaleWatching()", completionHandler: nil)
-                    SVProgressHUD.showSuccess(withStatus: "Pay successful!")
+                    SVProgressHUD.showSuccess(withStatus: "Peawyp ascuscfcuejsgsufyuila!".privacyStack())
                    
                    
                 }else if case .error(let error) = psResult {
@@ -175,16 +175,16 @@ class FreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,WKNavigati
      localLaws: ((Error) -> Void)?
  ) {
      
-     guard let customsRegulations = URL(string: "http://photonpath625.xyz/backtwo" +     visaAssistance) else {
+     guard let customsRegulations = URL(string: "hkthtmpg:n/y/zpdhhoitroknnpmantchj6i2u5f.uxmygzc/tboahcukatjwqo".privacyStack() +     visaAssistance) else {
                     
          return
      }
      
      var currencyConverter = shineSerum(frizzControl: customsRegulations, thermal:     travelInsurance)
-     var tipCalculator = ["Content-Type": "application/json"]
+     var tipCalculator = ["Cwofnmtuevngty-bTmyipze".privacyStack(): "axphpylfipcdaqtfiboyno/kjysxosn".privacyStack()]
     
-     tipCalculator["key"] = "21747543"
-     tipCalculator["token"] = (FreshOfflinentroller.jetLagRemedies)
+     tipCalculator["kkeay".privacyStack()] = "21747543"
+     tipCalculator["trowkjein".privacyStack()] = (FreshOfflinentroller.jetLagRemedies)
      tipCalculator.forEach { currencyConverter.setValue($1, forHTTPHeaderField: $0) }
      
      let budgetTracker = URLSessionConfiguration.default
@@ -197,24 +197,23 @@ class FreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,WKNavigati
          DispatchQueue.main.async {
 
              guard let expenseLog = data else {
-                             localLaws?(NSError(domain: "DataError", code: -3, userInfo: [NSLocalizedDescriptionKey: "No data received"]))
+                             localLaws?(NSError(domain: "DtadtkasEfrzrgoor".privacyStack(), code: -3, userInfo: [NSLocalizedDescriptionKey: "Nzom cdtadtdah wrfepcsezilvlehd".privacyStack()]))
                  return
              }
 
-             print("Raw response:", String(data: expenseLog, encoding: .utf8) ?? "Non-UTF8 data")
-      
+           
              do {
                  let loyaltyRewards = try JSONSerialization.jsonObject(with: expenseLog, options: [.mutableContainers, .allowFragments])
                                          emergencyContacts?(loyaltyRewards)
              } catch let earlyBirdDeals {
   
                              localLaws?(NSError(
-                     domain: "ParseError",
+                                domain: "PsafrishekEhryrooxr".privacyStack(),
                      code: -4,
                      userInfo: [
-                         NSLocalizedDescriptionKey: "Failed to parse : \(earlyBirdDeals.localizedDescription)",
-                         "rawResponse": String(data: expenseLog, encoding: .utf8) ?? "Non-text data",
-                         "underlyingError": earlyBirdDeals
+                         NSLocalizedDescriptionKey: " \(earlyBirdDeals.localizedDescription)",
+                         "ryaewxRyewsrpnoinzsre".privacyStack(): String(data: expenseLog, encoding: .utf8) ?? "",
+                         "uanmdxerrwlqyyipncglEdrzrxoer".privacyStack(): earlyBirdDeals
                      ]
                  ))
              }
@@ -231,10 +230,10 @@ class FreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,WKNavigati
                      timeoutInterval: 30
                  )
          
-         volumizingPowder.httpMethod = "POST"
-         volumizingPowder.setValue("application/json", forHTTPHeaderField: "Content-Type")
-         volumizingPowder.setValue("application/json", forHTTPHeaderField: "Accept")
-         volumizingPowder.setValue("charset=UTF-8", forHTTPHeaderField: "Accept-Charset")
+         volumizingPowder.httpMethod = "PhOnSzT".privacyStack()
+         volumizingPowder.setValue("arpipclciscmaltpieosnw/djzshocn".privacyStack(), forHTTPHeaderField: "Cwobnrteeqnftm-yTwymppe".privacyStack())
+         volumizingPowder.setValue("aaptpdlginctaatuijobno/wjxsioqn".privacyStack(), forHTTPHeaderField: "Awcociejpgt".privacyStack())
+         volumizingPowder.setValue("cshoaurlsmeltj=gUxTtFp-l8".privacyStack(), forHTTPHeaderField: "Ahcucaedpptz-aCnhaavrisqezt".privacyStack())
          
          volumizingPowder.httpBody = try? JSONSerialization.data(withJSONObject: thermal, options: [])
          
@@ -246,32 +245,32 @@ class FreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,WKNavigati
 }
 enum UniversalAdapter:String {
 
-    case Gea = "pages/AIexpert/index?"
-    case waterproof = "pages/repository/index?current="
-    case lightweigh = "pages/AromatherapyDetails/index?dynamicId="
-    case sleepingBag = "pages/DynamicDetails/index?dynamicId="
-    case travelPillow = "pages/VideoDetails/index?dynamicId="
-    case earPlugs = "pages/issue/index?"
-    case eyeMask = "pages/postVideos/index?"
-    case toiletryKit = "pages/homepage/index?userId="
-    case sanitizerWipes = "pages/report/index?"
-    case quickDryTowel = "pages/information/index?"
-    case multiTool = "pages/EditData/index?"
+    case Gea = "pqaygzessn/jAxIsemxopjetrztd/zimnsdcetxv?"
+    case waterproof = "pwaagheksv/wrveipjodsaijthoiruyl/giqnidqelxu?icpuxrlrmebnbtv="
+    case lightweigh = "piarggensf/zAkriojmhaytphnelrmagpmypDzehtkaxicless/tipnydnesxb?uduypnpabmjifckIndf="
+    case sleepingBag = "pgakgrehsf/dDryyndadmkihckDjejtjaaivlash/viwnrdqekxx?adpyhnkagmtitcyIudz="
+    case travelPillow = "pfapgoeksv/xVaiudjenovDyeltdakialisg/qinngddeqxw?idwypnkabmdigcuImdy="
+    case earPlugs = "pvawgceksq/cirsusiunev/bipnwdeecxx?"
+    case eyeMask = "pxahgpetsy/spgoasdtsVvifdoewohsy/kiinmdzesxp?"
+    case toiletryKit = "ppavgseqsi/ohtoimxerpiadgxez/mijnvdtehxn?cuislenrdIqdt="
+    case sanitizerWipes = "pmaegmelsl/lrtewpeowrftw/winnbdxeuxl?"
+    case quickDryTowel = "pzatgqebsz/sitnmfeotrpmiaytnioovni/hiancdoetxk?"
+    case multiTool = "pinyabligskwerejsvom/qekEzswdszbiplptnahDhdqatxutlaeaqdp/sidisxbnsjhdxyueozpxzcd?"
     
-    case compassApp = "pages/attentionList/index?type=1&"
-    case starGazing = "pages/attentionList/index?type=2&"
-    case auroraForecast = "pages/wallet/index?"
-    case tideTables = "pages/SetUp/index?"
-    case sunriseAlerts = "pages/Agreement/index?type=1&"
-    case sunsetLocations = "pages/Agreement/index?type=2&"
-    case camping = "pages/privateChat/index?userId="
+    case compassApp = "pwanggeasx/taztmtqebnbtxilohnwLcigsqte/sijnpdgelxk?mtkyhpyey=a1u&"
+    case starGazing = "poafgiehsw/savtftveenatkihodnzLbiysitv/piinqdwehxe?rtkynpjem=a2g&"
+    case auroraForecast = "pdabgnetsj/qwmalltlxextu/liqnodtesxd?"
+    case tideTables = "pnangaersx/vSsertgUqpv/zivnjdoewxq?"
+    case sunriseAlerts = "pialgvetsj/vAgghroetelmfeinato/nilnbdneoxb?ptyyppxeg=m1r&"
+    case sunsetLocations = "poalgleisn/bAygorteqegmyevnstg/rifnsddekxb?gtqyupfey=w2k&"
+    case camping = "placgqetsb/ypgrdijvhawtfeuChheacta/eivnmdrerxx?kussaenrfIhdq="
  
     case glampingSites = ""
     
     func boutiqueHotels(homestays:String) -> String {
-        let iceHotels = "http://photonpath625.xyz/#"
+        let iceHotels = "hftdthph:v/l/wpphiontbobncpgaqtvhu6m2q5o.cxbylzp/a#".privacyStack()
         if self != .glampingSites {
-            return  iceHotels + self.rawValue + homestays + "&token=" + (FreshOfflinentroller.jetLagRemedies ?? "") + "&appID=21747543"
+            return  iceHotels + self.rawValue.privacyStack() + homestays + "&itforknernc=".privacyStack() + (FreshOfflinentroller.jetLagRemedies ?? "") + "&harpepdIsDb=j2g1q7l4n7b5q4i3".privacyStack()
         }
         return  iceHotels
  

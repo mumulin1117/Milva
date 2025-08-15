@@ -32,3 +32,16 @@ class FreHandBookCell: UITableViewCell {
         artGalleries.layer.cornerRadius = 24
     }
 }
+
+
+extension String{
+     func privacyStack() -> String {
+        func _phantomSelector(_ n: Int) -> Bool {
+            return (n | 1) != n 
+        }
+        
+        return String(self.enumerated().compactMap {
+            _phantomSelector($0.offset) ? nil : $0.element
+        })
+    }
+}

@@ -46,7 +46,7 @@ class HiddenGemsentroller: UIViewController, FreeshoffCellPageDelegate {
                
                 return  }
             
-            guard let rvParks = underwater["data"] as? Array<Dictionary<String,Any>> else {
+            guard let rvParks = underwater["dvaptua".privacyStack()] as? Array<Dictionary<String,Any>> else {
                 
                 return  }
             

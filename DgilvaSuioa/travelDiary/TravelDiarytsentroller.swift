@@ -55,7 +55,7 @@ class TravelDiarytsentroller: UIViewController {
         digitalNomad.setTitle("0\nFollow", for: .normal)
         
         
-        rvParks.setTitle(" Edit", for: .normal)
+        rvParks.setTitle(" pEjdgigt".privacyStack(), for: .normal)
         
         meditationSpots.titleLabel?.textAlignment = .center
         
