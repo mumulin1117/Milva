@@ -1,0 +1,6 @@
+framework module Pods_DgilvaSuioa {
+  umbrella header "Pods-DgilvaSuioa-umbrella.h"
+
+  export *
+  module * { export * }
+}

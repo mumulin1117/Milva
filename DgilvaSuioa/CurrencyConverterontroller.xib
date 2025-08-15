@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrencyConverterontroller" customModule="DgilvaSuioa" customModuleProvider="target">
+            <connections>
+                <outlet property="activityDetailsTime" destination="DN5-Ni-XNu" id="2Eg-VC-E4c"/>
+                <outlet property="fireworkDisplays" destination="cGh-X5-hE9" id="iJw-eP-Cxb"/>
+                <outlet property="roadTripMode" destination="oAU-VS-hhX" id="Eij-0G-o5t"/>
+                <outlet property="skiResorts" destination="k1s-ax-dpA" id="nop-qz-PgE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="waterRefillStations" destination="44K-42-g15" id="UMW-dE-NaO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terrainAnalysis" translatesAutoresizingMaskIntoConstraints="NO" id="ImP-zW-BU1">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="droneterrainge" translatesAutoresizingMaskIntoConstraints="NO" id="fjF-WG-oqO">
+                    <rect key="frame" x="0.0" y="353" width="393" height="499"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="499" id="hyr-UY-wYe"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tipCalculator" translatesAutoresizingMaskIntoConstraints="NO" id="qcP-ah-hT3">
+                    <rect key="frame" x="111" y="284" width="70" height="69"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="69" id="4Rg-c3-pqn"/>
+                        <constraint firstAttribute="width" constant="70" id="Cqb-j0-8bn"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wj-rQ-Xg6">
+                    <rect key="frame" x="52" y="804" width="129" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="MRd-w8-i8Q"/>
+                        <constraint firstAttribute="width" constant="129" id="T8v-GX-A1M"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="&lt;Privacy Policy&gt;."/>
+                    <connections>
+                        <action selector="indigenousExperiences:" destination="-1" eventType="touchUpInside" id="YTR-sf-nOu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAU-VS-hhX">
+                    <rect key="frame" x="22" y="781" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="22" id="3IC-w7-q5s"/>
+                        <constraint firstAttribute="height" constant="22" id="wKn-MW-yXB"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="photography"/>
+                    <state key="selected" image="arNavigation"/>
+                    <connections>
+                        <action selector="handicraftWorkshops:" destination="-1" eventType="touchUpInside" id="6oL-Vw-e8g"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing you agree to our" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44K-42-g15">
+                    <rect key="frame" x="52" y="781" width="174" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.42240513392857143" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaB-pQ-1fA">
+                    <rect key="frame" x="234" y="777" width="129" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="5D3-fI-gvs"/>
+                        <constraint firstAttribute="width" constant="129" id="A1Z-p4-dVH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="&lt;Terms of Service&gt;"/>
+                    <connections>
+                        <action selector="indigenousExperiences:" destination="-1" eventType="touchUpInside" id="6lC-rL-I97"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eh-hA-OdG">
+                    <rect key="frame" x="22.333333333333343" y="670" width="348.33333333333326" height="62"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Sign in now" backgroundImage="yogaGetaways"/>
+                    <connections>
+                        <action selector="communityTourism:" destination="-1" eventType="touchUpInside" id="Epe-DL-VCa"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email adderss" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DN5-Ni-XNu">
+                    <rect key="frame" x="22.333333333333343" y="423" width="348.33333333333326" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="I4c-69-79f"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vectorpawuxian" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-X5-hE9">
+                    <rect key="frame" x="85" y="148" width="308" height="189"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="189" id="cNi-3s-zmP"/>
+                        <constraint firstAttribute="width" constant="308" id="uVi-jb-ECQ"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instaWorthy" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-eh-OEB">
+                    <rect key="frame" x="38" y="437" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="2Pk-7a-EXF"/>
+                        <constraint firstAttribute="width" constant="24" id="r9d-kO-ZNl"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1s-ax-dpA">
+                    <rect key="frame" x="22.333333333333343" y="507" width="348.33333333333326" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="PlO-Uy-I3c"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meditationSpots" translatesAutoresizingMaskIntoConstraints="NO" id="CHU-7M-tar">
+                    <rect key="frame" x="38" y="521" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="Wgc-Fb-2JP"/>
+                        <constraint firstAttribute="height" constant="24" id="cCK-0g-p0p"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fjF-WG-oqO" firstAttribute="top" secondItem="DN5-Ni-XNu" secondAttribute="top" constant="-70" id="7KP-be-o68"/>
+                <constraint firstItem="DN5-Ni-XNu" firstAttribute="trailing" secondItem="8eh-hA-OdG" secondAttribute="trailing" id="9Qp-gf-9oH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8eh-hA-OdG" secondAttribute="trailing" constant="22.300000000000001" id="ACT-TH-PNz"/>
+                <constraint firstItem="gfp-eh-OEB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="38" id="AJz-d2-ReU"/>
+                <constraint firstItem="fjF-WG-oqO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E18-sm-z4f"/>
+                <constraint firstItem="fjF-WG-oqO" firstAttribute="top" secondItem="qcP-ah-hT3" secondAttribute="bottom" id="FOg-ry-Xyc"/>
+                <constraint firstItem="ImP-zW-BU1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JgZ-Vf-1C6"/>
+                <constraint firstItem="ImP-zW-BU1" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="NXa-Oj-SfG"/>
+                <constraint firstItem="8wj-rQ-Xg6" firstAttribute="top" secondItem="44K-42-g15" secondAttribute="bottom" constant="8" symbolic="YES" id="Nxq-iD-ScC"/>
+                <constraint firstItem="CHU-7M-tar" firstAttribute="centerY" secondItem="k1s-ax-dpA" secondAttribute="centerY" id="OEr-zd-h5F"/>
+                <constraint firstItem="k1s-ax-dpA" firstAttribute="leading" secondItem="DN5-Ni-XNu" secondAttribute="leading" id="OJq-NH-Wm7"/>
+                <constraint firstAttribute="bottom" secondItem="ImP-zW-BU1" secondAttribute="bottom" id="RE4-SW-BTY"/>
+                <constraint firstItem="fjF-WG-oqO" firstAttribute="top" secondItem="cGh-X5-hE9" secondAttribute="bottom" constant="16" id="RFh-9i-K4y"/>
+                <constraint firstItem="k1s-ax-dpA" firstAttribute="trailing" secondItem="DN5-Ni-XNu" secondAttribute="trailing" id="VET-hr-qAv"/>
+                <constraint firstItem="qcP-ah-hT3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="111" id="aXa-7p-jMK"/>
+                <constraint firstItem="8wj-rQ-Xg6" firstAttribute="leading" secondItem="44K-42-g15" secondAttribute="leading" id="bWE-2T-34t"/>
+                <constraint firstItem="k1s-ax-dpA" firstAttribute="top" secondItem="DN5-Ni-XNu" secondAttribute="bottom" constant="32" id="grS-0Y-Rhv"/>
+                <constraint firstItem="cGh-X5-hE9" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="iZw-NR-6Dx"/>
+                <constraint firstAttribute="bottom" secondItem="fjF-WG-oqO" secondAttribute="bottom" id="jCK-BL-jdr"/>
+                <constraint firstItem="44K-42-g15" firstAttribute="leading" secondItem="oAU-VS-hhX" secondAttribute="trailing" constant="8" symbolic="YES" id="jdT-ds-2Ns"/>
+                <constraint firstItem="TaB-pQ-1fA" firstAttribute="centerY" secondItem="44K-42-g15" secondAttribute="centerY" id="nno-nY-kWX"/>
+                <constraint firstItem="DN5-Ni-XNu" firstAttribute="leading" secondItem="8eh-hA-OdG" secondAttribute="leading" id="pTt-cY-gwT"/>
+                <constraint firstItem="TaB-pQ-1fA" firstAttribute="top" secondItem="8eh-hA-OdG" secondAttribute="bottom" constant="45" id="qqM-8m-XPb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oAU-VS-hhX" secondAttribute="bottom" constant="15" id="rCC-om-AYt"/>
+                <constraint firstItem="gfp-eh-OEB" firstAttribute="centerY" secondItem="DN5-Ni-XNu" secondAttribute="centerY" id="rj9-Dm-hld"/>
+                <constraint firstItem="oAU-VS-hhX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22" id="s0j-ec-q7h"/>
+                <constraint firstItem="8eh-hA-OdG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22.300000000000001" id="s8w-ET-Mpr"/>
+                <constraint firstItem="ImP-zW-BU1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uEt-Ur-ffC"/>
+                <constraint firstItem="44K-42-g15" firstAttribute="top" secondItem="oAU-VS-hhX" secondAttribute="top" id="v99-wv-PRw"/>
+                <constraint firstItem="fjF-WG-oqO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vpK-vc-Suk"/>
+                <constraint firstItem="CHU-7M-tar" firstAttribute="leading" secondItem="gfp-eh-OEB" secondAttribute="leading" id="w0h-Yr-mh8"/>
+                <constraint firstItem="TaB-pQ-1fA" firstAttribute="leading" secondItem="44K-42-g15" secondAttribute="trailing" constant="8" symbolic="YES" id="wHE-oZ-vAE"/>
+            </constraints>
+            <point key="canvasLocation" x="-153.43511450381678" y="-13.380281690140846"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Vectorpawuxian" width="286.66665649414062" height="135"/>
+        <image name="arNavigation" width="22" height="22"/>
+        <image name="droneterrainge" width="375" height="502.66665649414062"/>
+        <image name="instaWorthy" width="24" height="24"/>
+        <image name="meditationSpots" width="24" height="24"/>
+        <image name="photography" width="22" height="22"/>
+        <image name="terrainAnalysis" width="375" height="812"/>
+        <image name="tipCalculator" width="65.666664123535156" height="65.666664123535156"/>
+        <image name="yogaGetaways" width="339.66665649414062" height="62.333332061767578"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

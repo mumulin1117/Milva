@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="363" id="KGk-i7-Jjw" customClass="FreeshoffCell" customModule="DgilvaSuioa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="526" height="363"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="526" height="363"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPv-zl-7f8">
+                        <rect key="frame" x="0.0" y="0.0" width="526" height="227"/>
+                        <color key="backgroundColor" red="0.094117647058823528" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="227" id="0Mb-Mq-yEL"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9f-2M-X4S">
+                        <rect key="frame" x="16" y="243" width="494" height="72"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="72" id="aCf-vv-xrp"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" backgroundImage="audioGuide"/>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="travelPodcast" translatesAutoresizingMaskIntoConstraints="NO" id="J1V-h8-avn">
+                        <rect key="frame" x="16" y="331" width="97" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="6ot-qF-n5W"/>
+                            <constraint firstAttribute="width" constant="97" id="lDz-2E-QFB"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" red="0.094117647058823528" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="k9f-2M-X4S" secondAttribute="trailing" constant="16" id="LaQ-tW-vQt"/>
+                    <constraint firstItem="iPv-zl-7f8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MXp-Qn-WLD"/>
+                    <constraint firstAttribute="trailing" secondItem="iPv-zl-7f8" secondAttribute="trailing" id="XE9-Ub-Dqn"/>
+                    <constraint firstItem="iPv-zl-7f8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Xux-9y-leN"/>
+                    <constraint firstItem="J1V-h8-avn" firstAttribute="top" secondItem="k9f-2M-X4S" secondAttribute="bottom" constant="16" id="ZW5-Xr-zLW"/>
+                    <constraint firstItem="k9f-2M-X4S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="meW-Ca-M0x"/>
+                    <constraint firstItem="k9f-2M-X4S" firstAttribute="top" secondItem="iPv-zl-7f8" secondAttribute="bottom" constant="16" id="oMQ-Ov-NA0"/>
+                    <constraint firstItem="J1V-h8-avn" firstAttribute="leading" secondItem="k9f-2M-X4S" secondAttribute="leading" id="p49-0a-inc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="earlyBirdDeals" destination="iPv-zl-7f8" id="aD0-hn-rix"/>
+                <outlet property="lastMinuteOffers" destination="k9f-2M-X4S" id="RHL-BG-tGR"/>
+            </connections>
+            <point key="canvasLocation" x="126.71755725190839" y="132.04225352112678"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="audioGuide" width="343" height="72"/>
+        <image name="travelPodcast" width="97" height="24"/>
+    </resources>
+</document>
